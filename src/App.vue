@@ -1,4 +1,6 @@
 <script setup>
+import { app, db } from './firebaseConfig';
+import { getDatabase, ref, onValue } from "firebase/database";
 import Main from './components/Main.vue';
 import Nav from './components/Nav.vue';
 import Search from './components/Search.vue';
@@ -10,16 +12,30 @@ import HostButton from './components/HostButton.vue';
 export default {
   data() {
     return {
-      username: 'Test'
+      username: '',
+      dbUsername: 'Nothing yet...'
     }
+  },
+  created() {
+    //Check cookies for username
+    let username = $cookies.get('lastepochlfg-username');
+    if (username != null) {
+      this.username = username;
+    }
+
+    // const playerRef = ref(db, 'players/player');
+    // onValue(playerRef, (snapshot) => {
+    //   //TODO: Validate
+    //   console.log(snapshot);
+    //   const data = snapshot.val();
+      
+    // });
   },
   methods: {
     updateUsername(event) {
       //TODO: Validate
-
-      //TODO: Update firebase
-
       this.username = event.target.value;
+      $cookies.set('lastepochlfg-username', this.username);
     },
     hostGame() {
       return true;
