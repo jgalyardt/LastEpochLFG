@@ -8,15 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="myClass">
-    {{ username }}
+  <div class="username">
+    <input type="text" :value="username">
   </div>
 </template>
 
 <style scoped>
-.myClass {
-  width: 100%;
-  height: 100%;
-  background-color: red;
-}
 </style>

@@ -8,15 +8,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="myClass">
+  <button>
     {{ username }}
-  </div>
+  </button>
 </template>
 
 <style scoped>
-.myClass {
-  width: 100%;
-  height: 100%;
+button {
   background-color: red;
 }
 </style>
