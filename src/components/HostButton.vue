@@ -8,13 +8,11 @@ defineProps({
 </script>
 
 <template>
-  <button>
-    {{ username }}
+  <button class="btn btn-primary float-right">
+    Host
   </button>
 </template>
 
 <style scoped>
-button {
-  background-color: red;
-}
+
 </style>

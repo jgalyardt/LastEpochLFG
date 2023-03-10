@@ -7,7 +7,6 @@ import Search from './components/Search.vue';
 import UsernameInput from './components/UsernameInput.vue';
 import HostButton from './components/HostButton.vue';
 </script>
-
 <script>
 export default {
   data() {
@@ -30,6 +29,12 @@ export default {
     //   const data = snapshot.val();
       
     // });
+  },
+  mounted() {
+    let fontawesome = document.createElement('script');
+    fontawesome.setAttribute('src', 'https://kit.fontawesome.com/693c1f5058.js');
+    fontawesome.setAttribute('crossorigin', 'anonymous');
+    document.head.appendChild(fontawesome);
   },
   methods: {
     updateUsername(event) {
