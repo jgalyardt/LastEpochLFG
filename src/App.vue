@@ -1,47 +1,75 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { app, db } from './firebaseConfig';
+import { getDatabase, ref, onValue } from "firebase/database";
+import Main from './components/Main.vue';
+import Nav from './components/Nav.vue';
+import Search from './components/Search.vue';
+import UsernameInput from './components/UsernameInput.vue';
+import HostButton from './components/HostButton.vue';
+</script>
+<script>
+export default {
+  data() {
+    return {
+      username: '',
+      dbUsername: 'Nothing yet...'
+    }
+  },
+  created() {
+    //Check cookies for username
+    let username = $cookies.get('lastepochlfg-username');
+    if (username != null) {
+      this.username = username;
+    }
+
+    // const playerRef = ref(db, 'players/player');
+    // onValue(playerRef, (snapshot) => {
+    //   //TODO: Validate
+    //   console.log(snapshot);
+    //   const data = snapshot.val();
+      
+    // });
+  },
+  mounted() {
+    let fontawesome = document.createElement('script');
+    fontawesome.setAttribute('src', 'https://kit.fontawesome.com/693c1f5058.js');
+    fontawesome.setAttribute('crossorigin', 'anonymous');
+    document.head.appendChild(fontawesome);
+  },
+  methods: {
+    updateUsername(event) {
+      //TODO: Validate
+      this.username = event.target.value;
+      $cookies.set('lastepochlfg-username', this.username);
+    },
+    hostGame() {
+      return true;
+    }
+  }
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <Main>
+    <template #nav>
+      <Nav>
+        <template #username>
+          <UsernameInput @change="updateUsername" :username="username"></UsernameInput>
+        </template>
+        <template #hostButton>
+          <HostButton :username="username"></HostButton>
+        </template>
+      </Nav>
+    </template>
+    <template #search>
+      <Search></Search>
+    </template>
+    <template #lobbyTable>
+      
+    </template>
+  </Main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
