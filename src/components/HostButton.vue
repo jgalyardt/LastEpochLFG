@@ -8,7 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <button class="btn btn-primary float-right">
+  <button class="btn btn-primary float-right d-none d-lg-block">
+    Host Game
+  </button>
+  <button class="btn btn-primary float-right d-lg-none">
     Host
   </button>
 </template>

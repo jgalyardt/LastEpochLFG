@@ -16,7 +16,11 @@ defineProps({
         <i v-else class="fa-solid fa-xmark"></i>
       </span>
     </div>
-  
-  
   </div>
 </template>
+
+<style scoped>
+input {
+  max-width: 240px;
+}
+</style>
