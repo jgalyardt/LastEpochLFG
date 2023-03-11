@@ -21,6 +21,37 @@ defineProps({
 
 <style scoped>
 input {
+  color: white;
+  background-color: #110f12;
+  border-color: #58575a;
   max-width: 240px;
+}
+
+.input-group-append {
+  border-color: #939297;
+}
+
+.input-group-append > span {
+  background-color: #27262f;
+  border-color: #58575a;
+}
+
+.fa-check {
+  /* TODO */
+}
+
+.fa-xmark {
+  color: #872635;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input:focus {
+  color: white;
+  background-color: #140F19;
+  border-color: white;
+  box-shadow: none;
 }
 </style>
