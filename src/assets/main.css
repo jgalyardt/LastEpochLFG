@@ -2,10 +2,12 @@
 
 :root {
   --c-bg-dark: #07060E;
-  --c-bg-muted: #140F19;
+  --c-bg-muted: #2c1e3a;
 
   --c-text-light: #F7E897;
   --c-text-muted: #D3BA78;
+
+  --c-input-bg: #2b262f;
 }
 
 #app {

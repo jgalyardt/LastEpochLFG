@@ -1,19 +1,10 @@
 <template>
   <div class="main">
+    <slot name="nav"></slot>
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <slot name="nav"></slot>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <h1>LastEpochLFG</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <slot name="search"></slot>
+        <div class="col-12 usernameSlot">
+          <slot name="username"></slot>
         </div>
       </div>
       <div class="row">
@@ -30,8 +21,8 @@
   min-height: 100vh;
 }
 
-h1 {
-  color: white;
-  text-align: center;
+.usernameSlot {
+  padding-top: 100px;
+  margin-bottom: 50px;
 }
 </style>

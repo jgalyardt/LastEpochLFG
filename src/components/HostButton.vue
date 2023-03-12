@@ -8,10 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <button class="btn btn-primary float-right d-none d-lg-block">
+  <button class="btn btn-warning btn-sm float-right d-none d-sm-block">
     Host Game
   </button>
-  <button class="btn btn-primary float-right d-lg-none">
+  <button class="btn btn-warning btn-sm float-right d-sm-none">
     Host
   </button>
 </template>
