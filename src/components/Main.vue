@@ -23,5 +23,6 @@
 
 .usernameSlot {
   padding-top: 100px;
+  margin-bottom: 50px;
 }
 </style>

@@ -5,6 +5,8 @@ import Main from './components/Main.vue';
 import Nav from './components/Nav.vue';
 import UsernameInput from './components/UsernameInput.vue';
 import HostButton from './components/HostButton.vue';
+import LobbyTable from './components/LobbyTable.vue';
+
 </script>
 <script>
 export default {
@@ -55,7 +57,7 @@ export default {
       <UsernameInput @change="updateUsername" :username="username"></UsernameInput>
     </template>
     <template #lobbyTable>
-      
+      <LobbyTable></LobbyTable>
     </template>
   </Main>
 </template>

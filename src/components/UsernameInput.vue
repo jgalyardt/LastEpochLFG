@@ -2,19 +2,30 @@
 defineProps({
   username: {
     type: String,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 </script>
 
 <template>
-  <div class="input-group mb-3">
-    <input :value="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="isUsernameValid">
-    <div class="input-group-append">
-      <span class="input-group-text" id="isUsernameValid">
-        <i v-if="username" class="fa-solid fa-check"></i>
-        <i v-else class="fa-solid fa-xmark"></i>
-      </span>
+  <div
+    class="col-xs-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4"
+  >
+    <div class="input-group w-100">
+      <input
+        :value="username"
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="isUsernameValid"
+      />
+      <div class="input-group-append">
+        <span class="input-group-text" id="isUsernameValid">
+          <i v-if="username" class="fa-solid fa-check"></i>
+          <i v-else class="fa-solid fa-xmark"></i>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +35,7 @@ input {
   color: white;
   background-color: #110f12;
   border-color: #58575a;
-  max-width: 240px;
+  max-width: 100%;
 }
 
 .input-group-append {
@@ -37,7 +48,7 @@ input {
 }
 
 .fa-check {
-  /* TODO */
+  color: #358726;
 }
 
 .fa-xmark {
@@ -50,8 +61,11 @@ input::placeholder {
 
 input:focus {
   color: white;
-  background-color: #140F19;
+  background-color: #140f19;
   border-color: white;
   box-shadow: none;
+}
+
+@media screen {
 }
 </style>

@@ -1,9 +1,7 @@
 <script>
 export default {
-  methods: {
-
-  }
-}
+  methods: {},
+};
 </script>
 
 <template>
@@ -11,10 +9,12 @@ export default {
     <div class="container">
       <div class="row">
         <div class="col-6 float-left">
-          <img class="logo" src="../assets/LE_LFG_logo.png">
+          <img class="logo" src="../assets/LE_LFG_logo.png" />
         </div>
         <div class="col-6 text-right">
-          <a href="https://github.com/jgalyardt/LastEpochLFG" target="_blank"><i class="fa-brands fa-git-alt"></i></a>
+          <a href="https://github.com/jgalyardt/LastEpochLFG" target="_blank">
+            <i class="fa-brands fa-git-alt"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -43,5 +43,4 @@ export default {
 .fa-git-alt:hover {
   cursor: pointer;
 }
-
 </style>
